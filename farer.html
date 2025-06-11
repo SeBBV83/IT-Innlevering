@@ -1,12 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanlige farer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanlige farer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani&display=swap" rel="stylesheet" />
+  <style>
+    #bakgrunnsvideo {
+      filter: blur(6px) brightness(0.7);
+    }
+
+    .tilbake-knapp {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 12px 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .tilbake-knapp:hover {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .farer-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1000px;
+      width: 90%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+
+    .tekstboks {
+      flex: 1 1 300px;
+    }
+
+    .sideboks {
+      flex: 1 1 250px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .tekstboks h2 {
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Vanlige farer på nett</h1>
-    
+  <video autoplay muted loop playsinline id="bakgrunnsvideo">
+    <source src="bilder/bakgrunnsvideo.mp4" type="video/mp4" />
+  </video>
+
+  <a href="index.html" class="tilbake-knapp">← Tilbake</a>
+
+  <div class="innhold">
+    <h1>Vanlige farer</h1>
+
+    <div class="farer-container">
+      <div class="tekstboks">
+        <h2>Trusler på nett</h2>
+        <p>Internett kan være farlig hvis du ikke er forsiktig. Her er noen eksempler:</p>
+        <ul>
+          <li>Phishing (falske e-poster)</li>
+          <li>Lenker med skadevare</li>
+          <li>Falske konkurranser</li>
+          <li>Skadelige nedlastinger</li>
+          <li>Sosial manipulering</li>
+        </ul>
+        <p>Vær alltid kritisk til hva du klikker på!</p>
+      </div>
+      <div class="sideboks">
+        <h3>Vinn 10 000 kr!</h3>
+            <p>Du er valgt ut! Klikk her for å kreve premien din:</p>
+            <a>Krev premien nå</a>
+
+        </div>
+    </div>
+  </div>
 </body>
 </html>
