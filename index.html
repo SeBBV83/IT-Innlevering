@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nettsikkerhet & Personvern</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nettsikkerhet</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <h1>Nettsikkerhet</h1>
-    <nav>
-      <ul>
-        <li><a href="farer.html">Vanlige farer</a></li>
-        <li><a href="tips.html">Sikkerhetstips</a></li>
-        <li><a href="quiz.html">Test deg selv</a></li>
-      </ul>
-    </nav>
-  </header>
+  <video autoplay muted loop playsinline id="bakgrunnsvideo">
+    <source src="bilder/bakgrunnsvideo.mp4" type="video/mp4" />
+  </video>
 
-  <main>
-      <p>Lær hvordan du beskytter deg selv på nett</p>
-  </main>
-  
-  <script src="script.js"></script>
+  <div class="innhold">
+    <h1>Nettsikkerhet</h1>
+
+    <div class="menyboks">
+      <a href="farer.html" class="kategori">
+        <img src="ikoner/alert.svg" alt="Vanlige farer" />
+        <span>Vanlige farer</span>
+      </a>
+      <a href="tips.html" class="kategori">
+        <img src="ikoner/skjold.svg" alt="Sikkerhetstips" />
+        <span>Sikkerhetstips</span>
+      </a>
+      <a href="quiz.html" class="kategori">
+        <img src="ikoner/spørsmålstegn.svg" alt="Test deg selv" />
+        <span>Test deg selv</span>
+      </a>
+    </div>
+  </div>
 </body>
 </html>
