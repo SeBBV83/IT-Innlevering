@@ -1,12 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test deg selv</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani&display=swap" rel="stylesheet" />
+  <style>
+    .tilbake-knapp {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 12px 20px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+    .tilbake-knapp:hover {
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .quiz-boks {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+      color: white;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    .quiz-boks h2 {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 30px;
+      margin-top: 300px;
+    }
+
+    .spørsmål {
+      margin-bottom: 25px;
+      padding: 15px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.05);
+      transition: background-color 0.3s;
+    }
+
+    .spørsmål p {
+      font-weight: bold;
+    }
+
+    .spørsmål label {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    #resultat {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #00c3c3;
+      color: white;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .riktig {
+      background-color: rgba(0, 255, 0, 0.2);
+    }
+
+    .feil {
+      background-color: rgba(255, 0, 0, 0.2);
+    }
+  </style>
 </head>
 <body>
-    <h1>Test deg selv</h1>
-    
+  <video autoplay muted loop playsinline id="bakgrunnsvideo">
+    <source src="bilder/bakgrunnsvideo.mp4" type="video/mp4" />
+    Din nettleser støtter ikke video.
+  </video>
+
+  <a href="index.html" class="tilbake-knapp">← Tilbake</a>
+
+  <div class="quiz-boks">
+    <h2>Test deg selv!</h2>
+    <form id="quiz">
+      <div class="spørsmål" id="spm1">
+        <p>1. Hva er phishing?</p>
+        <label><input type="radio" name="spm1" value="feil"> Et dataspill</label>
+        <label><input type="radio" name="spm1" value="riktig"> En falsk e-post som prøver å lure deg</label>
+        <label><input type="radio" name="spm1" value="feil"> Et sikkerhetsprogram</label>
+      </div>
+
+      <div class="spørsmål" id="spm2">
+        <p>2. Hvorfor er det viktig med sterke passord?</p>
+        <label><input type="radio" name="spm2" value="riktig"> For å hindre at andre får tilgang</label>
+        <label><input type="radio" name="spm2" value="feil"> For at det skal være lettere å huske</label>
+        <label><input type="radio" name="spm2" value="feil"> For å bruke samme passord overalt</label>
+      </div>
+
+      <div class="spørsmål" id="spm3">
+        <p>3. Hva bør du gjøre hvis du får en mistenkelig lenke?</p>
+        <label><input type="radio" name="spm3" value="feil"> Klikke og se hva det er</label>
+        <label><input type="radio" name="spm3" value="feil"> Sende den videre til venner</label>
+        <label><input type="radio" name="spm3" value="riktig"> Ikke trykke og eventuelt rapportere senderen</label>
+      </div>
+
+      <div class="spørsmål" id="spm4">
+        <p>4. Hva er et spesialtegn?</p>
+        <label><input type="radio" name="spm4" value="feil"> En bokstav med aksent</label>
+        <label><input type="radio" name="spm4" value="riktig"> Et tegn som @, # eller !</label>
+        <label><input type="radio" name="spm4" value="feil"> En stor bokstav</label>
+      </div>
+
+      <div class="spørsmål" id="spm5">
+        <p>5. Hva er et godt sikkerhetstips?</p>
+        <label><input type="radio" name="spm5" value="feil"> Skriv passordet ditt på lappen ved PC-en</label>
+        <label><input type="radio" name="spm5" value="riktig"> Ikke del passordet med noen</label>
+        <label><input type="radio" name="spm5" value="feil"> Bruk samme passord på alle steder</label>
+      </div>
+
+      <button type="submit">Sjekk svar</button>
+      <div id="resultat"></div>
+    </form>
+
+    <button onclick="location.reload()" style="display:none;" id="prøvIgjenKnapp">Prøv på nytt</button>
+  </div>
+
+  <script>
+    const quiz = document.getElementById("quiz");
+    const resultat = document.getElementById("resultat");
+    const prøvIgjenKnapp = document.getElementById("prøvIgjenKnapp");
+  
+    quiz.addEventListener("submit", function(e) {
+      e.preventDefault();
+      let riktige = 0;
+  
+      for (let nr = 1; nr <= 5; nr++) {
+        let navnPåSpørsmål = "spm" + nr;
+        let valgtSvar = document.querySelector('input[name="' + navnPåSpørsmål + '"]:checked');
+        let boks = document.getElementById(navnPåSpørsmål);
+  
+        boks.classList.remove("riktig", "feil");
+  
+        if (valgtSvar) {
+          if (valgtSvar.value === "riktig") {
+            riktige++;
+            boks.classList.add("riktig");
+          } else {
+            boks.classList.add("feil");
+          }
+        } else {
+          boks.classList.add("feil");
+        }
+      }
+  
+      resultat.textContent = "Du fikk " + riktige + " av 5 riktige.";
+  
+      if (riktige >= 4) {
+        resultat.style.color = "lightgreen";
+      } else {
+        resultat.style.color = "orange";
+      }
+  
+      prøvIgjenKnapp.style.display = "block";
+    });
+  </script>  
 </body>
 </html>

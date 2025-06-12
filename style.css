@@ -1,70 +1,33 @@
-#bakgrunnsvideo {
-    position: fixed;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-  }
-
 body {
     margin: 0;
     font-family: 'Rajdhani', sans-serif;
     color: white;
 }
-  
-h1 {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 50px;
-    margin: 0;
+
+#bakgrunnsvideo {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
 }
 
-.menyboks {
+.tilbake-knapp {
     position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 60px;
-    width: 900px;
-    height: 180px;
-    padding: 60px 50px;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.08)
-}
-
-.kategori {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    font-weight: 600;
-    flex: 1 1 200px;
-    width: 250px;
-    padding: 20px;
-    text-decoration: none;
+    top: 20px;
+    left: 20px;
+    padding: 12px 20px;
     color: white;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 16px;
-    transition: transform 0.3s ease;
-}
-
-.kategori:hover {
-    transform: scale(1.03);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
     background: rgba(255, 255, 255, 0.08);
-    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
-.kategori img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 10px;
-    filter: brightness(0) invert(1); /* Gjør ikonene hvite */
+.tilbake-knapp:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
