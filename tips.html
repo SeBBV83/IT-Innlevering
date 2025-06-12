@@ -1,12 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sikkerhetstips</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sikkerhetstips</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani&display=swap" rel="stylesheet" />
+  <style>
+    #bakgrunnsvideo {
+      filter: brightness(0.6);
+    }
+
+    .tilbake-knapp {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 12px 20px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+    .tilbake-knapp:hover {
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .tips-innhold {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .tips-innhold img {
+      width: 70px;
+      filter: brightness(0) invert(1);
+      margin-bottom: 20px;
+    }
+
+    .tips-innhold h2 {
+      margin-bottom: 20px;
+      font-size: 35px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .tips-innhold ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    .tips-innhold li {
+      margin-bottom: 12px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Sikkerhetstips</h1>
-    
-</body>
-</html>
+  <video autoplay muted loop playsinline id="bakgrunnsvideo">
+    <source src="bilder/bakgrunnsvideo.mp4" type="video/mp4" />
+  </video>
+
+  <a href="index.html" class="tilbake-knapp">← Tilbake</a>
+
+  <div class="innhold">
+    <div class="tips-innhold">
+      <img src="ikoner/skjold.svg">
+      <h2>Sikkerhetstips</h2>
+      <ul>
+        <li>Bruk unike og sterke passord for hver nettside.</li>
+        <li>Del aldri passord med andre.</li>
+        <li>Vær kritisk til ukjente lenker og e-poster.</li>
+        <li>Hold programvaren oppdatert.</li>
+        <li>Bruk tofaktorautentisering der det er mulig.</li>
+        <li>Ikke legg ut personlige opplysninger offentlig.</li>
+      </ul>
+      <h3>Sjekk passordstyrken din!</h3>
