@@ -147,46 +147,6 @@
 
     <button onclick="location.reload()" style="display:none;" id="prøvIgjenKnapp">Prøv på nytt</button>
   </div>
-
-  
-  <script>
-    const quiz = document.getElementById("quiz");
-    const resultat = document.getElementById("resultat");
-    const prøvIgjenKnapp = document.getElementById("prøvIgjenKnapp");
-  
-    quiz.addEventListener("submit", function(e) {
-      e.preventDefault();
-      let riktige = 0;
-  
-      for (let nr = 1; nr <= 5; nr++) {
-        let navnPåSpørsmål = "spm" + nr;
-        let valgtSvar = document.querySelector('input[name="' + navnPåSpørsmål + '"]:checked');
-        let boks = document.getElementById(navnPåSpørsmål);
-  
-        boks.classList.remove("riktig", "feil");
-  
-        if (valgtSvar) {
-          if (valgtSvar.value === "riktig") {
-            riktige++;
-            boks.classList.add("riktig");
-          } else {
-            boks.classList.add("feil");
-          }
-        } else {
-          boks.classList.add("feil");
-        }
-      }
-  
-      resultat.textContent = "Du fikk " + riktige + " av 5 riktige.";
-  
-      if (riktige >= 4) {
-        resultat.style.color = "lightgreen";
-      } else {
-        resultat.style.color = "orange";
-      }
-  
-      prøvIgjenKnapp.style.display = "block";
-    });
-  </script>  
+  <script src="script.js"></script>
 </body>
 </html>
