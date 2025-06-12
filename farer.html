@@ -79,31 +79,6 @@
         </div>
     </div>
   </div>
-  <script>
-    function FalskKonkurranse(event) {
-    event.preventDefault();
-
-    for (let i = 0; i < 3; i++) {
-        let boks = document.createElement("div");
-
-        boks.innerText = "⚠️ Du har fått VIRUS!";
-        boks.style.position = "fixed";
-        boks.style.top = Math.random() * 80 + "%";
-        boks.style.left = Math.random() * 80 + "%";
-        boks.style.background = "red";
-        boks.style.color = "white";
-        boks.style.padding = "30px";
-        boks.style.fontSize = "24px";
-        boks.style.fontWeight = "bold";
-        boks.style.borderRadius = "10px";
-
-        document.body.appendChild(boks);
-
-        setTimeout(function () {
-        boks.remove();
-        }, 3000);
-    }
-    }
-</script>     
+  <script src="script.js"></script>
 </body>
 </html>

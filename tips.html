@@ -66,35 +66,6 @@
       <p id="melding" style="margin-top: 10px; font-weight: bold;"></p>      
     </div>
   </div>
-  <script>
-    let passord = document.getElementById("passord");
-    let melding = document.getElementById("melding");
-  
-    passord.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        let tekst = passord.value;
-        let poeng = 0;
-  
-        if (tekst.length >= 8) poeng++;
-        if (/[a-z]/.test(tekst)) poeng++;
-        if (/[A-Z]/.test(tekst)) poeng++;
-        if (/[0-9]/.test(tekst)) poeng++;
-        if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(tekst)) poeng++;
-  
-        if (tekst.length === 0) {
-          melding.textContent = "";
-        } else if (poeng <= 2) {
-          melding.textContent = "🔴 Svakt passord";
-          melding.style.color = "red";
-        } else if (poeng === 3 || poeng === 4) {
-          melding.textContent = "🟡 Medium passord";
-          melding.style.color = "orange";
-        } else {
-          melding.textContent = "🟢 Sterkt passord";
-          melding.style.color = "green";
-        }
-      }
-    });
-  </script>    
+  <script src="script.js"></script>  
 </body>
 </html>
